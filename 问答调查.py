@@ -5,7 +5,9 @@ import PySimpleGUI as sg
 #布局
 layout=[
 
-    [sg.Text('请输入下列信息…^_^',key='-1-',font=('宋体',20),enable_events=True)],
+    [sg.Text('请输入下列信息…^_^', key='-1-', font=('宋体', 20), enable_events=True),
+     sg.Text('给个赞吧！', key='-1.1-', font=('宋体', 10)),
+     sg.Button('点赞')],
     [sg.Text('名字：', font=('宋体')), sg.InputText('留鑫雨')],
     [sg.Text('年龄：',font=('宋体')), sg.InputText('12')],
     [sg.Text('性别：',font=('宋体')), sg.InputText('男')],
@@ -35,6 +37,11 @@ while True:
         break
     if event == '-1-':
         sg.Popup('eeeeee')
+    if event == '点赞':
+        windows['-1.1-'].update(
+            value='谢谢',
+            
+        )
 
 #关闭
 windows.close()
